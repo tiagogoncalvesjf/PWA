@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\favicon.ico" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="Views\Login\Cadastro.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\Recuperacao.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\Termos.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\_LayoutLogin.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Login\_ViewUser.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Ajuda.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Cadastro.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\LogOut.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\PainelUsuario.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Recuperacao.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Seção.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\Termos.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\_LayoutAdmin.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Admin\_ViewAdmin.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\User\Cadastro.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\User\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\User\Login.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\User\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\User\Recuperacao.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\User\Termos.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\User\_LayoutUser.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\User\_ViewUser.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\appsettings.Development.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\appsettings.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\Program.cs" />
+      <_ContentIncludedByDefault Remove="wwwroot\Startup.cs" />
+    </ItemGroup>
+
+</Project>
