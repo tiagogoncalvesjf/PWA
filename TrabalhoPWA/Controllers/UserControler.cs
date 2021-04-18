@@ -7,21 +7,35 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Buffet.Models;
 using Buffet.Models.Buffet.Cliente;
+using Buffet.ViewModels.Home;
 
 namespace Buffet.ControllersS
 {
     public class UserController : Controller
     {
         private readonly ILogger<Controller> _logger;
+        private readonly ClienteService _clienteService;
 
-        public UserController(ILogger<UserController> logger)
+        public UserController(ILogger<UserController> logger ,  ClienteService clienteService)
         {
+            _clienteService = clienteService;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var viewmodel = new IndexViewModel();
+            var clientesDoBanco = _clienteService.ObterClientes();
+            foreach (var clienteEntity in clientesDoBanco) {
+                viewmodel.Clientes.Add(new Cliente()
+                {
+                    Id = clienteEntity.Id.ToString(),
+                    Cpf = clienteEntity.Cpf,
+                    Nome = clienteEntity.Nome
+                });
+            }
+
+            return View(viewmodel);
         }
     
         public IActionResult Login()
