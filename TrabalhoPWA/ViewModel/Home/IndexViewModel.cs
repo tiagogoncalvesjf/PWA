@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Buffet.Models.Buffet.Cliente;
 
 namespace Buffet.ViewModels.Home
 {
@@ -7,9 +8,10 @@ namespace Buffet.ViewModels.Home
     {
         public string InformacaoQualquer { get; set; }
         public string Titulo { get; set; }
-
         public Usuario UsuarioLogado { get; set; }
+        public ClienteEntity clienteEspecificoTeste { get; set; }
 
+        
         public ICollection<Cliente> Clientes { get; set; }
 
         public IndexViewModel()
@@ -29,5 +31,6 @@ namespace Buffet.ViewModels.Home
         public string Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
+
     }
 }

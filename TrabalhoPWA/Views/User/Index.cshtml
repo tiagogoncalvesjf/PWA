@@ -1,4 +1,7 @@
-﻿@model Buffet.ViewModels.Home.IndexViewModel
+﻿
+@using Buffet.ViewModels.Home
+@model Buffet.ViewModels.Home.IndexViewModel
+
 
 @{
     ViewData["Title"] = "Home";
@@ -8,4 +11,6 @@
     <h1 class="display-4">Bem Vindo !</h1>
 </div>
 
-
+<p>Nome @Model.clienteEspecificoTeste.Nome </p>
+<p>Cpf @Model.clienteEspecificoTeste.Cpf </p>
+<p>Data @Model.clienteEspecificoTeste.DataCadastro </p>

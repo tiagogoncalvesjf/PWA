@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Buffet.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Buffet.Models;
@@ -15,25 +16,42 @@ namespace Buffet.ControllersS
     {
         private readonly ILogger<Controller> _logger;
         private readonly ClienteService _clienteService;
+        private readonly DatabaseContext _databaseContext;
 
-        public UserController(ILogger<UserController> logger ,  ClienteService clienteService)
+        public UserController(ILogger<UserController> logger ,  ClienteService clienteService, DatabaseContext databaseContext)
         {
             _clienteService = clienteService;
+            _databaseContext = databaseContext;
             _logger = logger;
         }
 
         public IActionResult Index()
         {
             var viewmodel = new IndexViewModel();
+            
             var clientesDoBanco = _clienteService.ObterClientes();
+            
             foreach (var clienteEntity in clientesDoBanco) {
                 viewmodel.Clientes.Add(new Cliente()
                 {
                     Id = clienteEntity.Id.ToString(),
                     Cpf = clienteEntity.Cpf,
-                    Nome = clienteEntity.Nome
+                    Nome = clienteEntity.Nome,
+                    
                 });
             }
+
+            var clienteEspecifico = _databaseContext.Clientes.Single(c => c.Nome.Equals("Tiago"));
+
+            viewmodel.clienteEspecificoTeste = clienteEspecifico;
+            
+            if(clienteEspecifico != null)
+            Console.WriteLine("Nome " + clienteEspecifico.Nome);
+            else
+            {
+                Console.WriteLine("Não Encontrado");
+            }
+            
 
             return View(viewmodel);
         }
