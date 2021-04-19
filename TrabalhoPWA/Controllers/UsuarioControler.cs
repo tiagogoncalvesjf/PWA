@@ -11,11 +11,11 @@ using Buffet.Models.Buffet.Cliente;
 
 namespace Buffet.Controllers
 {
-    public class AdminController : Controller
+    public class Usuario : Controller
     {
-        private readonly ILogger<AdminController> _logger;
+        private readonly ILogger<Usuario> _logger;
 
-        public AdminController(ILogger<AdminController> logger)
+        public Usuario(ILogger<Usuario> logger)
         {
             _logger = logger;
         }

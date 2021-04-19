@@ -12,13 +12,13 @@ using Buffet.ViewModels.Home;
 
 namespace Buffet.ControllersS
 {
-    public class UserController : Controller
+    public class Public : Controller
     {
         private readonly ILogger<Controller> _logger;
         private readonly ClienteService _clienteService;
         private readonly DatabaseContext _databaseContext;
 
-        public UserController(ILogger<UserController> logger ,  ClienteService clienteService, DatabaseContext databaseContext)
+        public Public(ILogger<Public> logger ,  ClienteService clienteService, DatabaseContext databaseContext)
         {
             _clienteService = clienteService;
             _databaseContext = databaseContext;
