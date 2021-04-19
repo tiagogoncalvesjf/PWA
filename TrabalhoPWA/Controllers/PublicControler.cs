@@ -66,7 +66,9 @@ namespace Buffet.ControllersS
         [HttpGet]
         public IActionResult Login()
         {
-            return View();
+            var viewmodel = new LoginViewModel();
+            viewmodel.Mensagem = (string)TempData["msg-cadastro"];
+            return View(viewmodel);
         }
         
         [HttpPost]

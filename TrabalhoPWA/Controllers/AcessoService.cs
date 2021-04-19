@@ -23,7 +23,7 @@ namespace TrabalhoPWA.Controllers
             
             if (!resultado.Succeeded)
             {
-                throw new("Usuario ou senha inválidos");
+                throw new("Usuario ou senha inválidos !");
             }
             
         }
