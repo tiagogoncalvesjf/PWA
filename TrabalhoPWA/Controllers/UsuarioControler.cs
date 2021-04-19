@@ -7,10 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Buffet.Models;
 using Buffet.Models.Buffet.Cliente;
+using Buffet.RequestModel;
+using Buffet.ViewModel;
+
+//lembrar de importar !
+using Microsoft.AspNetCore.Authorization; 
 
 
 namespace Buffet.Controllers
 {
+    
+    //Bloqueando acesso para impedir que entrem nestas actions sem estar logado
+    [Authorize]
+    
     public class Usuario : Controller
     {
         private readonly ILogger<Usuario> _logger;
@@ -25,20 +34,14 @@ namespace Buffet.Controllers
             return View();
         }
     
-        public IActionResult Login()
-        {
-            return View();
-        }
+        
+        
         
         public IActionResult Privacy()
         {
             return View();
         }
         
-        public IActionResult Cadastro()
-        {
-            return View();
-        }
         
         public IActionResult Recuperacao()
         {
@@ -60,14 +63,16 @@ namespace Buffet.Controllers
             return View();
         }
         
-        public IActionResult Seção()
+        
+        public IActionResult Secao()
         {
+
             return View();
         }
         
-        public IActionResult LogOut()
+        public RedirectResult LogOut()
         {
-            return View();
+            return Redirect("/public/login");
         }
         
         

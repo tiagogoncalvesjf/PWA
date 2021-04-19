@@ -11,6 +11,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using TrabalhoPWA.Controllers;
+using TrabalhoPWA.Models.Acesso;
+using Usuario = Buffet.Controllers.Usuario;
 
 namespace Buffet
 {
@@ -27,11 +31,33 @@ namespace Buffet
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
+
+            //Adicionando o Banco de Dados:
             services.AddDbContext<DatabaseContext>(options =>
-                options.UseMySql(Configuration.GetConnectionString("BuffetDb"))
-            );
+                options.UseMySql(Configuration.GetConnectionString("BuffetDb")));
+
+            //ADicionando o identity passando a classe acesso/usuario e acesso/role
+            //OBS: para usar o método AddEntityFrameWorkStores é necessário baixar o pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore (nuget)
+            //Passar o banco de dados no parâmetro (DatabaseContext)
+            //OBS: na classe DatabaseContext é necessário herdar a classe IdentityDbContext passando o User, Role, chaveprimária
+
+            services.AddIdentity<User, Role> (
+                options =>
+                {
+                    options.User.RequireUniqueEmail = true; //exigindo que só possa ter um cadastro por email
+                    // options.Password.RequiredLength = 6; //requirindo uma senha com pelo menos 8 digitos
+                }
+            ).AddEntityFrameworkStores<DatabaseContext>();
             
+            //Configurando cookies
+            services.ConfigureApplicationCookie(
+                options =>
+                {
+                    options.LoginPath = "/Usuario/Login";  //rota para direcionar caso tente acessar uma page não permitida
+                }
+            );
+
+            services.AddTransient<AcessoService>();
             services.AddTransient<ClienteService>();
             
         }
@@ -54,6 +80,10 @@ namespace Buffet
             app.UseStaticFiles();
 
             app.UseRouting();
+
+
+            //Informar para usar a autenticacao
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
