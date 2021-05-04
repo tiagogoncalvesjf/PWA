@@ -1,8 +1,11 @@
-﻿namespace Buffet.Models.Buffet.Cliente
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Buffet.Models.Buffet.Cliente
 {
     public class TipoCliente
     {
-        private int Id { get; set; }
+       
+        public int Id { get; protected set; }
         private string Descricao  { get; set; }
     }
 }
